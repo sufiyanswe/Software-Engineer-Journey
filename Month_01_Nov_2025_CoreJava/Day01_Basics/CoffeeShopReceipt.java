@@ -6,16 +6,16 @@ public class CoffeeShopReceipt {
         String customerName = "Alex";
 
         // Declare item prices and counts
-        int coffeePrice = 5;   // price per coffee in dollars
         int coffeeCount = 2;   // number of coffees
-        int muffinPrice = 3;   // price per muffin in dollars
         int muffinCount = 1;   // number of muffins
+        double coffeePrice = 5.0; // price per coffee in dollars
+        double muffinPrice = 3.0; // price per muffin in dollars
 
         // Declare tax rate
         double taxRate = 0.08; // 8% tax
 
         // Calculate subtotal
-        int subTotal = (coffeePrice * coffeeCount) + (muffinPrice * muffinCount);
+        double subTotal = (coffeePrice * coffeeCount) + (muffinPrice * muffinCount);
 
         // Calculate tax amount
         double taxAmount = subTotal * taxRate;
@@ -23,20 +23,13 @@ public class CoffeeShopReceipt {
         // Calculate total cost
         double totalCost = subTotal + taxAmount;
 
-        // Create message strings
-        String welcomeMessage = "Customer: " + customerName;
-        String itemMessage = "Items: " + coffeeCount + " Coffee(s), " + muffinCount + " Muffin(s)";
-        String subtotalMessage = "Subtotal: $" + subTotal;
-        String taxMessage = "Tax: $" + taxAmount;
-        String totalMessage = "Total: $" + totalCost;
-
         // Print receipt
         System.out.println("===== COFFEE SHOP RECEIPT =====");
-        System.out.println(welcomeMessage);
-        System.out.println(itemMessage);
-        System.out.println(subtotalMessage);
-        System.out.println(taxMessage);
-        System.out.println(totalMessage);
+        System.out.println("Customer: " + customerName);
+        System.out.println("Items: " + coffeeCount + " Coffee(s), " + muffinCount + " Muffin(s)");
+        System.out.printf("Subtotal: $%.2f%n", subTotal);
+        System.out.printf("Tax: $%.2f%n", taxAmount);
+        System.out.printf("Total: $%.2f%n", totalCost);
         System.out.println("===============================");
     }
 }
